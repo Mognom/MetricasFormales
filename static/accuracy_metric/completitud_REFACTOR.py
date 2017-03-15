@@ -643,13 +643,13 @@ if social_network in network_list:
         global contadorFallos
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/pinterest-timeline-stable/demo/PinterestCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/pinterest-timeline/demo/PinterestCompletitud.html")
                 sleep(3)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_local + "/Latency/pinterest-timeline-latency/demo/PinterestCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/pinterest-timeline/demo/PinterestCompletitudLatency.html")
                 sleep(3)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_local + "/Accuracy/pinterest-timeline-accuracy/demo/PinterestCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/pinterest-timeline/demo/PinterestCompletitudAccuracy.html")
                 sleep(3)
 
         access_token="AY04wcXo7dJ5mWrtRqoaVd105WpLFJeRM47xRWRDaxDMLKAvZgAAAAA"
@@ -759,7 +759,7 @@ if social_network in network_list:
             fallos=comp(imagAPI,imagComp)
 
             mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
-            contadorFallos=contadorFallos/float(245)
+            contadorFallos=contadorFallos/float(len(imagAPI))
             print contadorFallos
             mpPinterest.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
